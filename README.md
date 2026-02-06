@@ -20,33 +20,26 @@ The framework has three components, mirroring the paper's architecture:
 
 ### How it works
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  MCP Server Codebase                                        │
-│                                                             │
-│  ┌──────────────────┐     ┌──────────────────────────────┐  │
-│  │ AgentManifestGen  │────▶│ agent-manifest.json          │  │
-│  │ (source analysis) │     │ {                            │  │
-│  └──────────────────┘     │   "description": "...",      │  │
-│                            │   "permissions": [           │  │
-│                            │     "mcp.ac.filesystem.read",│  │
-│                            │     "mcp.ac.network.client"  │  │
-│                            │   ]                          │  │
-│                            │ }                            │  │
-│                            └──────────────┬───────────────┘  │
-└───────────────────────────────────────────┼──────────────────┘
-                                            │
-                                            ▼
-┌──────────────────────────────────────────────────────────────┐
-│  AgentBox (Policy Enforcement Engine)                        │
-│                                                              │
-│  1. Load manifest                                            │
-│  2. Resolve generic → effective permissions (with overrides) │
-│  3. Request user consent                                     │
-│  4. Launch MCP server in sandboxed environment               │
-│  5. Enforce: filtered env, scoped fs, network allow-list     │
-│  6. Audit all access attempts                                │
-└──────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph Codebase["MCP Server Codebase"]
+        Gen["AgentManifestGen\n(source analysis)"]
+        Manifest["agent-manifest.json\n\nPermissions:\nfilesystem.read\nnetwork.client\n..."]
+        Gen -->|generates| Manifest
+    end
+
+    Manifest --> Box
+
+    subgraph Box["AgentBox (Policy Enforcement Engine)"]
+        direction TB
+        S1["1. Load manifest"]
+        S2["2. Resolve generic → effective\npermissions (with overrides)"]
+        S3["3. Request user consent"]
+        S4["4. Launch MCP server in\nsandboxed environment"]
+        S5["5. Enforce: filtered env,\nscoped fs, network allow-list"]
+        S6["6. Audit all access attempts"]
+        S1 --> S2 --> S3 --> S4 --> S5 --> S6
+    end
 ```
 
 ## Installation
