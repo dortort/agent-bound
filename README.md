@@ -29,17 +29,10 @@ flowchart LR
         Gen -->|generates| Manifest
     end
 
-    Manifest --> S1
+    Manifest --> Steps
 
     subgraph Box["AgentBox"]
-        direction TB
-        S1["1. Load manifest"]
-        S2["2. Resolve generic to effective<br/>permissions with overrides"]
-        S3["3. Request user consent"]
-        S4["4. Launch MCP server in<br/>sandboxed environment"]
-        S5["5. Enforce: filtered env,<br/>scoped fs, network allow-list"]
-        S6["6. Audit all access attempts"]
-        S1 --> S2 --> S3 --> S4 --> S5 --> S6
+        Steps["1. Load manifest<br/>2. Resolve generic to effective permissions with overrides<br/>3. Request user consent<br/>4. Launch MCP server in sandboxed environment<br/>5. Enforce: filtered env, scoped fs, network allow-list<br/>6. Audit all access attempts"]
     end
 ```
 
