@@ -17,7 +17,7 @@
 export { detectPermissions, type DetectionResult } from "./heuristics.js";
 
 import { readFile } from "node:fs/promises";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { readdirSync } from "node:fs";
 import { join, extname } from "node:path";
 import { detectPermissions, type DetectionResult } from "./heuristics.js";
 import { createManifest, type AgentManifest } from "../manifest/index.js";

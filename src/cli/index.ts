@@ -16,7 +16,7 @@ import { loadManifest, saveManifest, validateManifest } from "../manifest/index.
 import { createAgentBox } from "../box/index.js";
 import { generateManifest } from "../gen/index.js";
 import { resolvePolicy } from "../box/policy.js";
-import { ALL_PERMISSIONS, PERMISSION_DESCRIPTIONS, type Permission } from "../permissions.js";
+import { ALL_PERMISSIONS, PERMISSION_DESCRIPTIONS } from "../permissions.js";
 import { readFile } from "node:fs/promises";
 
 // ---------------------------------------------------------------------------
