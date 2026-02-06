@@ -1,0 +1,6 @@
+{
+  "description": "Fetch MCP server that retrieves content from URLs on behalf of the agent. Makes outbound HTTP/HTTPS requests and returns response data.",
+  "permissions": [
+    "mcp.ac.network.client"
+  ]
+}

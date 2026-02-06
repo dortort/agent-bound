@@ -1,0 +1,12 @@
+{
+  "description": "Full-access MCP server that exposes pieces and flows as tools, runs an API/UI, executes webhooks and actions, integrates with third-party services, reads environment configuration, persists local settings, and sends telemetry.",
+  "permissions": [
+    "mcp.ac.filesystem.read",
+    "mcp.ac.filesystem.write",
+    "mcp.ac.filesystem.delete",
+    "mcp.ac.system.env.read",
+    "mcp.ac.network.client",
+    "mcp.ac.network.server",
+    "mcp.ac.system.exec"
+  ]
+}

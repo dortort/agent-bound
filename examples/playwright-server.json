@@ -1,0 +1,10 @@
+{
+  "description": "Playwright MCP server providing browser automation and HTTP request tools. Launches Chromium/Firefox/WebKit, navigates pages, interacts with the DOM, executes JavaScript, takes screenshots, saves PDFs, and writes artifacts to disk.",
+  "permissions": [
+    "mcp.ac.filesystem.read",
+    "mcp.ac.filesystem.write",
+    "mcp.ac.system.env.read",
+    "mcp.ac.network.client",
+    "mcp.ac.system.exec"
+  ]
+}

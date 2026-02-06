@@ -1,0 +1,7 @@
+{
+  "description": "Filesystem MCP server providing read and write access to local files and directories. Supports listing, reading, writing, moving, and searching files within configured paths.",
+  "permissions": [
+    "mcp.ac.filesystem.read",
+    "mcp.ac.filesystem.write"
+  ]
+}
