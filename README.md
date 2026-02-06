@@ -30,10 +30,10 @@ flowchart TD
 
     Manifest --> S1
 
-    subgraph Box["AgentBox (Policy Enforcement Engine)"]
+    subgraph Box["AgentBox - Policy Enforcement Engine"]
         direction TB
         S1["1. Load manifest"]
-        S2["2. Resolve generic &#8594; effective<br/>permissions (with overrides)"]
+        S2["2. Resolve generic to effective<br/>permissions with overrides"]
         S3["3. Request user consent"]
         S4["4. Launch MCP server in<br/>sandboxed environment"]
         S5["5. Enforce: filtered env,<br/>scoped fs, network allow-list"]
