@@ -21,16 +21,17 @@ The framework has three components, mirroring the paper's architecture:
 ### How it works
 
 ```mermaid
-flowchart TD
+flowchart LR
     subgraph Codebase["MCP Server Codebase"]
+        direction TB
         Gen["AgentManifestGen<br/>(source analysis)"]
-        Manifest["agent-manifest.json<br/>#123;<br/>  #quot;description#quot;: #quot;...#quot;,<br/>  #quot;permissions#quot;: #91;<br/>    #quot;mcp.ac.filesystem.read#quot;,<br/>    #quot;mcp.ac.network.client#quot;<br/>  #93;<br/>#125;"]
+        Manifest["agent-manifest.json<br/>#123;<br/>#nbsp;#nbsp;#quot;description#quot;: #quot;...#quot;,<br/>#nbsp;#nbsp;#quot;permissions#quot;: #91;<br/>#nbsp;#nbsp;#nbsp;#nbsp;#quot;mcp.ac.filesystem.read#quot;,<br/>#nbsp;#nbsp;#nbsp;#nbsp;#quot;mcp.ac.network.client#quot;<br/>#nbsp;#nbsp;#93;<br/>#125;"]
         Gen -->|generates| Manifest
     end
 
     Manifest --> S1
 
-    subgraph Box["AgentBox - Policy Enforcement Engine"]
+    subgraph Box["AgentBox"]
         direction TB
         S1["1. Load manifest"]
         S2["2. Resolve generic to effective<br/>permissions with overrides"]
