@@ -23,20 +23,20 @@ The framework has three components, mirroring the paper's architecture:
 ```mermaid
 flowchart TD
     subgraph Codebase["MCP Server Codebase"]
-        Gen["AgentManifestGen\n(source analysis)"]
-        Manifest["agent-manifest.json\n\nPermissions:\nfilesystem.read\nnetwork.client\n..."]
+        Gen["AgentManifestGen<br/>(source analysis)"]
+        Manifest["agent-manifest.json<br/><br/>permissions:<br/>filesystem.read,<br/>network.client"]
         Gen -->|generates| Manifest
     end
 
-    Manifest --> Box
+    Manifest --> S1
 
     subgraph Box["AgentBox (Policy Enforcement Engine)"]
         direction TB
         S1["1. Load manifest"]
-        S2["2. Resolve generic → effective\npermissions (with overrides)"]
+        S2["2. Resolve generic &#8594; effective<br/>permissions (with overrides)"]
         S3["3. Request user consent"]
-        S4["4. Launch MCP server in\nsandboxed environment"]
-        S5["5. Enforce: filtered env,\nscoped fs, network allow-list"]
+        S4["4. Launch MCP server in<br/>sandboxed environment"]
+        S5["5. Enforce: filtered env,<br/>scoped fs, network allow-list"]
         S6["6. Audit all access attempts"]
         S1 --> S2 --> S3 --> S4 --> S5 --> S6
     end
