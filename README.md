@@ -24,7 +24,7 @@ The framework has three components, mirroring the paper's architecture:
 flowchart TD
     subgraph Codebase["MCP Server Codebase"]
         Gen["AgentManifestGen<br/>(source analysis)"]
-        Manifest["agent-manifest.json<br/><br/>permissions:<br/>filesystem.read,<br/>network.client"]
+        Manifest["agent-manifest.json<br/>#123;<br/>  #quot;description#quot;: #quot;...#quot;,<br/>  #quot;permissions#quot;: #91;<br/>    #quot;mcp.ac.filesystem.read#quot;,<br/>    #quot;mcp.ac.network.client#quot;<br/>  #93;<br/>#125;"]
         Gen -->|generates| Manifest
     end
 
