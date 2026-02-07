@@ -21,13 +21,13 @@ The framework has three components, mirroring the paper's architecture:
 ### How it works
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  MCP Server Codebase                                        │
-│                                                             │
-│  ┌──────────────────┐     ┌──────────────────────────────┐  │
+┌──────────────────────────────────────────────────────────────┐
+│  MCP Server Codebase                                         │
+│                                                              │
+│  ┌───────────────────┐     ┌──────────────────────────────┐  │
 │  │ AgentManifestGen  │────▶│ agent-manifest.json          │  │
 │  │ (source analysis) │     │ {                            │  │
-│  └──────────────────┘     │   "description": "...",      │  │
+│  └───────────────────┘     │   "description": "...",      │  │
 │                            │   "permissions": [           │  │
 │                            │     "mcp.ac.filesystem.read",│  │
 │                            │     "mcp.ac.network.client"  │  │
