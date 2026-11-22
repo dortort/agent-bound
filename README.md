@@ -51,14 +51,16 @@ The framework has three components, mirroring the paper's architecture:
 
 ## Installation
 
+`agent-bound` is not yet published to the npm registry. Install it directly from GitHub:
+
 ```bash
-npm install agent-bound
+npm install github:dortort/agent-bound
 ```
 
 Or clone and build from source:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/dortort/agent-bound.git
 cd agent-bound
 npm install
 npm run build
