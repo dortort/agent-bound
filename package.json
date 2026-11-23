@@ -44,7 +44,7 @@
     "eslint": "^9.39.2",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.73.0",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.12"
   },
   "files": [
     "dist",
